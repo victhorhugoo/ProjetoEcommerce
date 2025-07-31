@@ -1,3 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block body %}
 <h3>Loja</h3>
-{% endblock %}
+{% for produto in produtos %}
+<a href="{% url 'ver_produto' produto.id %}"
+  ><img src="{{ produto.imagem.url}}" width="300" height="450"
+/></a>
+<p>Produto: {{ produto.nome }}</p>
+<p>Preço: {{ produto.preco }}</p>
+{% endfor %} {%endblock %}
